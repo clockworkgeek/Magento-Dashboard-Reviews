@@ -1,0 +1,13 @@
+{
+  "name":"clockworkgeek/dashboard-Reviews",
+  "type":"magento-module",
+  "license":"OSL-3.0",
+  "homepage":"https://github.com/clockworkgeek/Magento-Dashboard-Reviews",
+  "description":"Show the newest, pending product reviews on the admin dashboard.",
+  "authors":[
+    {
+      "name":"Daniel Deady",
+      "email":"daniel@clockworkgeek.com"
+    }
+  ]
+}
