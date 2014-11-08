@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ *
+ * @category   Adminhtml
+ * @package    Clockworkgeek_DashboardReviews
+ * @author     Daniel Deady <daniel@clockworkgeek.com>
+ * @copyright  Copyright (c) 2010, Daniel Deady
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+	<modules>
+		<Clockworkgeek_DashboardReviews>
+			<version>1.0.6</version>
+		</Clockworkgeek_DashboardReviews>
+	</modules>
+	<global>
+		<blocks>
+			<dashboardreviews>
+				<class>Clockworkgeek_DashboardReviews_Block</class>
+			</dashboardreviews>
+		</blocks>
+	</global>
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<dashboardreviews before="Mage_Adminhtml">Clockworkgeek_DashboardReviews</dashboardreviews>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+	<adminhtml>
+		<layout>
+			<updates>
+				<dashboardreviews>
+					<file>dashboardreviews.xml</file>
+				</dashboardreviews>
+			</updates>
+		</layout>
+	</adminhtml>
+</config>

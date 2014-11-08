@@ -1,0 +1,3 @@
+code  app/code/community/Clockworkgeek/DashboardReviews
+adminhtml/dashboardreviews.xml  app/design/adminhtml/default/default/layout/dashboardreviews.xml
+modules/Clockworkgeek_DashboardReviews.xml  app/etc/modules/Clockworkgeek_DashboardReviews.xml
