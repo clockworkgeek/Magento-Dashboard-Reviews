@@ -18,9 +18,10 @@
 class Clockworkgeek_DashboardReviews_DashboardReviewsController extends Mage_Adminhtml_Controller_Action
 {
 
-	public function pendingAction()
-	{
-		$this->getResponse()->setBody($this->getLayout()->createBlock('dashboardreviews/grid')->toHtml());
-	}
-
+    public function pendingAction()
+    {
+        $this->getResponse()->setBody($this->getLayout()
+            ->createBlock('dashboardreviews/grid')
+            ->toHtml());
+    }
 }
