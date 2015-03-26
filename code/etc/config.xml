@@ -17,36 +17,41 @@
  */
 -->
 <config>
-	<modules>
-		<Clockworkgeek_DashboardReviews>
-			<version>1.0.6</version>
-		</Clockworkgeek_DashboardReviews>
-	</modules>
-	<global>
-		<blocks>
-			<dashboardreviews>
-				<class>Clockworkgeek_DashboardReviews_Block</class>
-			</dashboardreviews>
-		</blocks>
-	</global>
-	<admin>
-		<routers>
-			<adminhtml>
-				<args>
-					<modules>
-						<dashboardreviews before="Mage_Adminhtml">Clockworkgeek_DashboardReviews</dashboardreviews>
-					</modules>
-				</args>
-			</adminhtml>
-		</routers>
-	</admin>
-	<adminhtml>
-		<layout>
-			<updates>
-				<dashboardreviews>
-					<file>dashboardreviews.xml</file>
-				</dashboardreviews>
-			</updates>
-		</layout>
-	</adminhtml>
+    <modules>
+        <Clockworkgeek_DashboardReviews>
+            <version>1.0.7</version>
+        </Clockworkgeek_DashboardReviews>
+    </modules>
+    <global>
+        <blocks>
+            <dashboardreviews>
+                <class>Clockworkgeek_DashboardReviews_Block</class>
+            </dashboardreviews>
+        </blocks>
+        <models>
+            <dashboardreviews>
+                <class>Clockworkgeek_DashboardReviews_Model</class>
+            </dashboardreviews>
+        </models>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <dashboardreviews before="Mage_Adminhtml">Clockworkgeek_DashboardReviews</dashboardreviews>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <dashboardreviews>
+                    <file>dashboardreviews.xml</file>
+                </dashboardreviews>
+            </updates>
+        </layout>
+    </adminhtml>
 </config>
