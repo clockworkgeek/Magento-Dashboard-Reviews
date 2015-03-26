@@ -27,39 +27,9 @@ class Clockworkgeek_DashboardReviews_Block_Grid extends Mage_Adminhtml_Block_Das
 
     protected function _prepareCollection()
     {
-        /* @var $model Mage_Review_Model_Review */
-        $model = Mage::getModel('review/review');
-        /* @var $collection Mage_Review_Model_Mysql4_Review_Product_Collection */
-        $collection = $model->getProductCollection()
-            ->addStatusFilter($model->getPendingStatus())
-            ->addStoreData();
-        if ($this->getParam('website')) {
-            $storeIds = Mage::app()->getWebsite($this->getParam('website'))
-                ->getStoreIds();
-            $storeId = array_pop($storeIds);
-        } else 
-            if ($this->getParam('group')) {
-                $storeIds = Mage::app()->getGroup($this->getParam('group'))
-                    ->getStoreIds();
-                $storeId = array_pop($storeIds);
-            } else {
-                $storeId = (int) $this->getParam('store');
-            }
-        $collection->setDateOrder()
-            ->setStoreId($storeId)
-            ->addStoreFilter($storeId)
-            ->addReviewSummary();
-        /* @var $item Mage_Catalog_Model_Product */
-        foreach ($collection as $item) {
-            if (! Mage::registry('review_data'))
-                Mage::register('review_data', $item);
-                /* @var $rating Mage_Adminhtml_Block_Review_Rating_Summary */
-            $rating = $this->getLayout()->createBlock('adminhtml/review_rating_summary');
-            $rating->setReviewId($item->getReviewId());
-            $item->setData('summary_rating', $rating->toHtml());
-        }
-        
-        $this->setCollection($collection);
+        /* @var $reviews Clockworkgeek_DashboardReviews_Model_Resource_Review_Pending_Collection */
+        $reviews = Mage::getModel('dashboardreviews/resource_review_pending_collection');
+        $this->setCollection($reviews);
         
         return parent::_prepareCollection();
     }
