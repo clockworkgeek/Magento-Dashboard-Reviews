@@ -20,18 +20,22 @@ class Clockworkgeek_DashboardReviews_Block_Tab extends Mage_Adminhtml_Block_Abst
 
     protected function _prepareLayout()
     {
-        /* @var $grids Mage_Adminhtml_Block_Dashboard_Grids */
-        $grids = $this->getLayout()
-            ->getBlock('content')
-            ->getChild('dashboard')
-            ->getChild('grids');
-        $grids->addTab('pending_reviews', array(
-            'label' => Mage::helper('review')->__('Pending Reviews'),
-            'url' => $this->getUrl('*/dashboardReviews/pending', array(
-                '_current' => true
-            )),
-            'class' => 'ajax'
-        ));
+        /* @var $session Mage_Admin_Model_Session */
+        $session = Mage::getSingleton('admin/session');
+        if ($session->isAllowed('catalog/reviews_ratings/reviews/pending')) {
+            /* @var $grids Mage_Adminhtml_Block_Dashboard_Grids */
+            $grids = $this->getLayout()
+                ->getBlock('content')
+                ->getChild('dashboard')
+                ->getChild('grids');
+            $grids->addTab('pending_reviews', array(
+                'label' => Mage::helper('review')->__('Pending Reviews'),
+                'url' => $this->getUrl('*/dashboardReviews/pending', array(
+                    '_current' => true
+                )),
+                'class' => 'ajax'
+            ));
+        }
         return parent::_prepareLayout();
     }
 }

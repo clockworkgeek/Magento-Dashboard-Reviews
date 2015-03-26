@@ -24,4 +24,9 @@ class Clockworkgeek_DashboardReviews_DashboardReviewsController extends Mage_Adm
             ->createBlock('dashboardreviews/grid')
             ->toHtml());
     }
+
+    protected function _isAllowed()
+    {
+        return Mage::getSingleton('admin/session')->isAllowed('catalog/reviews_ratings/reviews/pending');
+    }
 }
